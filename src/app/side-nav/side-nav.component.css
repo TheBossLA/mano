@@ -1,0 +1,11 @@
+.matbar { 
+    font-size: 14px;
+    align-items: center;
+    place-content: center;
+    align-content: center;
+    height: 60px;
+    display: flex;
+    background-color: transparent;
+    color: inherit;
+    font-weight: 600;
+}

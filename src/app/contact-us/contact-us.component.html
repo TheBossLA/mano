@@ -1,0 +1,37 @@
+<div class="content">
+    <h1>My Contacts Details</h1>
+    <div class="contacts"> 
+        <div>
+            <label>
+                Name: <input [(ngModel)]='name' placeholder="name"/>
+            </label>
+        </div>   
+        <div>
+            <label>
+                Name: <input [(ngModel)]='name' placeholder="name"/>
+            </label>
+        </div>   
+        <div>
+            <label>
+                Name: <input [(ngModel)]='name' placeholder="name"/>
+            </label>
+        </div>   
+        <li *ngFor="let contact of contacts"
+        [class.selected]="contact === showDetails" 
+        (click)="onShow(contact)">
+            <span class = "badge">
+             {{contact.id}} 
+            </span>{{contact.name}} 
+        </li>
+    </div>
+    <div *ngIf="showDetails">
+        <h2> {{showDetails.name | uppercase}} {{showDetails.surname | uppercase}}</h2>
+        <div>Email: {{showDetails.email}}</div>
+        <div>Cell: {{showDetails.cell}} </div>
+        <div>
+            <label>
+                Name: <input [(ngModel)]="showDetails.name" placeholder="name"/>
+            </label>
+        </div>
+    </div>
+</div>

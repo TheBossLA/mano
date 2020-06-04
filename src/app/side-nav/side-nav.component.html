@@ -1,0 +1,24 @@
+<div class="app-container">
+    <div class="mat-bar">
+      <div fxLayout = "row" fxLayoutGap="3px"> 
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <div>            
+          <a routerLink = "/home">
+            <span class="menu-text"><span class="spacer"></span>
+              <img src='assets/img/water.png' alt="mano logo"> 
+              Mano App
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <mat-sidenav-container class="app-sidenav-container">
+      <mat-sidenav #sidenav (click)="sidenav.toggle()" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="3rem">
+        <app-header></app-header>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet class="app-container"></router-outlet>
+        <app-footer></app-footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
